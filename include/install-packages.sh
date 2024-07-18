@@ -84,9 +84,11 @@ PACKAGES=(
 	lame
 	ffmpeg
 	physfs
-	vita-libdl
+	vita-rss-libdl
+	luajit
 	tinyxml2
 	cpython
+	cpython3
 	asio
 	assimp
 	opensles
@@ -103,10 +105,12 @@ PACKAGES=(
 	SceShaccCgExt
 	boost
 	pib
+	libxmp
+	libxmp-lite
 )
 
 b() {
-	$DIR/../vdpm $1
+	$DIR/../vdpm -f $1
 }
 
 install_packages() {

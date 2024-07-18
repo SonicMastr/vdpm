@@ -2,7 +2,7 @@
 
 get_download_link () {
   if ! [[ "$(uname -m)" =~ ^(armv7l|arm64|aarch64)$ ]]; then
-    wget -qO- https://github.com/vitasdk/vita-headers/raw/master/.travis.d/last_built_toolchain.py | python - $@
+    wget -qO- https://github.com/vitasdk/vita-headers/raw/master/.travis.d/last_built_toolchain.py | python3 - $@
   elif [[ "$(uname -s)" == Linux* ]]; then
     curl -s https://api.github.com/repos/SonicMastr/autobuilds/releases/latest | awk -F\" '/browser_download_url.*.tar.bz2/{print $(NF-1)}'
   else
